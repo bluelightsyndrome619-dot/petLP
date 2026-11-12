@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MediKataru for pet ｜ 動物病院の説明を、家族の言葉に。</title>
+  <meta name="description" content="MediKataru for pet は、動物病院での獣医師の説明をAIが聞き取り、飼い主や家族にわかるやさしい言葉にまとめるサービスです。受診歴のまとめ、写真の記録、LINEでの家族共有まで、ひとつの場所に。">
+  <meta property="og:title" content="MediKataru for pet ｜ 動物病院の説明を、家族の言葉に。">
+  <meta property="og:description" content="獣医師の説明をAIがやさしい言葉に。振り返れて、家族と共有できる。">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#9A3A16">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%239A3A16'/%3E%3Cg fill='%23fff'%3E%3Cellipse cx='20' cy='26' rx='5' ry='6.5'/%3E%3Cellipse cx='28.5' cy='18' rx='5' ry='6.5'/%3E%3Cellipse cx='38' cy='18' rx='5' ry='6.5'/%3E%3Cellipse cx='46' cy='26' rx='5' ry='6.5'/%3E%3Cpath d='M33 30c-8 0-14 7-14 13 0 4 3 6 7 6 3 0 5-1.5 7-1.5s4 1.5 7 1.5c4 0 7-2 7-6 0-6-6-13-14-13z'/%3E%3C/g%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ============ Header ============ -->
+<header class="site-header" id="top">
+  <div class="container header-inner">
+    <a href="#top" class="brand" aria-label="MediKataru for pet トップへ">
+      <span class="brand-icon" aria-hidden="true">
+        <svg viewBox="0 0 64 64"><use href="#paw"/></svg>
+      </span>
+      <span class="brand-text">
+        <span class="brand-name">Medi<em>Kataru</em> <small>for pet</small></span>
+        <span class="brand-tag">動物病院の説明を、家族の言葉に。</span>
+      </span>
+    </a>
+    <nav class="global-nav" id="global-nav" aria-label="メインメニュー">
+      <a href="#problem">課題</a>
+      <a href="#features">できること</a>
+      <a href="#demo">まとめの例</a>
+      <a href="#howto">はじめかた</a>
+      <a href="#privacy">安心のしくみ</a>
+      <a href="#faq">よくある質問</a>
+      <a href="https://medikataru-for-pet.onrender.com/" class="btn btn-primary btn-sm nav-cta" target="_blank" rel="noopener">アプリを開く</a>
+    </nav>
+    <button class="menu-toggle" id="menu-toggle" aria-label="メニューを開く" aria-expanded="false" aria-controls="global-nav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main>
+
+<!-- ============ Hero ============ -->
+<section class="hero">
+  <div class="hero-bg" aria-hidden="true">
+    <span class="blob blob-1"></span><span class="blob blob-2"></span><span class="blob blob-3"></span>
+    <svg class="float-paw fp-1" viewBox="0 0 64 64"><use href="#paw"/></svg>
+    <svg class="float-paw fp-2" viewBox="0 0 64 64"><use href="#paw"/></svg>
+    <svg class="float-paw fp-3" viewBox="0 0 64 64"><use href="#paw"/></svg>
+  </div>
+  <div class="container hero-inner">
+    <div class="hero-copy">
+      <p class="eyebrow reveal">獣医師の説明を、AIがやさしく翻訳</p>
+      <h1 class="hero-title reveal">
+        動物病院での説明を、<br>
+        <span class="nw"><span class="hl">家族みんなにわかる言葉</span>で。</span>
+      </h1>
+      <p class="hero-lead reveal">
+        診察室で録音するだけで、むずかしい説明をやさしくまとめます。<br class="pc-only">
+        あとから何度でも振り返れて、同席できなかった家族にもLINEでそのまま共有。<br class="pc-only">
+        これまでの受診歴も、皮膚や傷の写真も、ひとつの場所に。
+      </p>
+      <div class="hero-cta reveal">
+        <a href="https://medikataru-for-pet.onrender.com/" class="btn btn-primary btn-lg" target="_blank" rel="noopener">
+          <span class="btn-plus" aria-hidden="true">＋</span>
+          <span>うちの子を登録してはじめる<small>インストール不要・ブラウザですぐ使えます</small></span>
+        </a>
+        <a href="#demo" class="btn btn-ghost btn-lg">まとめの例を見る</a>
+      </div>
+      <ul class="hero-badges reveal">
+        <li><span aria-hidden="true">🐶</span>犬・猫・うさぎ・鳥など</li>
+        <li><span aria-hidden="true">🔒</span>記録と写真は端末内に保存</li>
+        <li><span aria-hidden="true">💬</span>LINEで家族に送れる</li>
+      </ul>
+    </div>
+
+    <!-- Phone mock -->
+    <div class="hero-visual reveal">
+      <div class="phone">
+        <div class="phone-notch" aria-hidden="true"></div>
+        <div class="phone-screen">
+          <div class="app-bar">
+            <span class="app-icon" aria-hidden="true"><svg viewBox="0 0 64 64"><use href="#paw"/></svg></span>
+            <span class="app-name">Medi<em>Kataru</em> <small>for pet</small></span>
+          </div>
+          <div class="app-meta">🐶 ポチ ・ 11月12日（木）</div>
+          <div class="app-title">腎臓の数値と療法食</div>
+          <div class="app-tabs"><span class="on">🐾 今日の説明</span><span>📚 これまでの受診歴</span></div>
+          <div class="app-card app-lead">
+            <strong>ポチは腎臓の数値が少し高めでした。食事を変えて2週間後に再検査します。</strong>
+            <span class="app-speak">🔊 声で読み上げる</span>
+          </div>
+          <div class="app-card app-warn">
+            <b>⚠️ こんな様子なら、早めに病院へ連絡</b>
+            <ul><li>食欲がなくなったとき</li><li>吐いたとき</li></ul>
+          </div>
+          <div class="app-card">
+            <b>🏠 おうちですること</b>
+            <ul><li>ごはんは療法食<span class="gloss">（病気に合わせて栄養を調整した特別なごはん）</span>に切り替え</li><li>水をしっかり飲ませる</li></ul>
+          </div>
+          <div class="app-line">💬 LINEで家族に送る</div>
+        </div>
+      </div>
+      <div class="bubble bubble-1">「BUN」ってなに？<br><b>→ 言葉の意味もそえて</b></div>
+      <div class="bubble bubble-2">同席できなかった家族にも<br><b>→ 同じ内容をLINEで</b></div>
+    </div>
+  </div>
+  <a href="#problem" class="scroll-down" aria-label="下へスクロール"><span></span></a>
+</section>
+
+<!-- ============ Problem ============ -->
+<section class="section problem" id="problem">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="section-label">Problem</p>
+      <h2 class="section-title">医療者の説明は、<br class="sp-only"><span class="nw">飼い主や家族に</span><span class="u nw">届ききっていない。</span></h2>
+      <p class="section-desc">そしてそれは、これからも続く──むしろ大きくなっていく問題です。</p>
+    </div>
+
+    <div class="stats">
+      <article class="stat reveal">
+        <p class="stat-num"><span class="count" data-from="0" data-to="40">40</span>〜<span class="count" data-from="0" data-to="80">80</span><small>%</small></p>
+        <p class="stat-text">医療者から伝えられた情報のうち、<b>直後に忘れられる</b>と報告されている割合。高齢であったり不安を抱えていたりすると、記憶はさらに不正確・不十分になりがちです。</p>
+        <p class="stat-src">出典：Kessels RPC. <i>J R Soc Med.</i> 2003;96(5):219–222</p>
+      </article>
+      <article class="stat reveal">
+        <p class="stat-num stat-word">理解の差</p>
+        <p class="stat-text">日本でも、<b>ヘルスリテラシー</b>（健康や医療の情報を理解し活用する力）が低い人ほど、医師の説明への理解が低いことが示唆されています。</p>
+        <p class="stat-src">出典：<i>Health Lit Res Pract.</i> 2024;8(3):e175–e183</p>
+      </article>
+      <article class="stat reveal">
+        <p class="stat-num">約<span class="count" data-from="0" data-to="35">35</span><small>%</small></p>
+        <p class="stat-text">2040年に見込まれる<b>65歳以上の人口割合</b>。2025年には75歳以上が全人口の約18％に。説明を受ける飼い主・家族側の理解負荷は、今後さらに高まります。</p>
+        <p class="stat-src">出典：厚生労働省「我が国の人口について」</p>
+      </article>
+    </div>
+
+    <h3 class="sub-title reveal">診察室のまわりで、起きていること</h3>
+    <div class="personas">
+      <article class="persona reveal">
+        <div class="persona-icon" aria-hidden="true">🧑‍🦳</div>
+        <h4>飼い主</h4>
+        <p class="persona-pain">説明を聞いても難しくて理解できず、後で内容を思い出せない、覚えていられない。</p>
+        <p class="persona-want"><span>欲しいのは</span>会話を平易に要約・記録して保存できること</p>
+      </article>
+      <article class="persona reveal">
+        <div class="persona-icon" aria-hidden="true">👨‍👩‍👧</div>
+        <h4>家族</h4>
+        <p class="persona-pain">同席できず、本人から聞いても要点がわからない。</p>
+        <p class="persona-want"><span>欲しいのは</span>許可したメンバーへの共有</p>
+      </article>
+      <article class="persona reveal">
+        <div class="persona-icon" aria-hidden="true">🩺</div>
+        <h4>医療者</h4>
+        <p class="persona-pain">何度も同じ説明が必要になる。何度聞いても正しい情報が伝わらない。</p>
+        <p class="persona-want"><span>欲しいのは</span>その日の記録に加え、これまでの受診歴の確認と要約</p>
+      </article>
+      <article class="persona reveal">
+        <div class="persona-icon" aria-hidden="true">🐕</div>
+        <h4>ペット</h4>
+        <p class="persona-pain">飼い主の理解不足が、検査・処置・治療に影響する可能性がある。</p>
+        <p class="persona-want"><span>欲しいのは</span>飼い主の「わかったつもり」を減らすこと</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Concept ============ -->
+<section class="section concept" id="concept">
+  <div class="container concept-inner">
+    <div class="concept-flow reveal" aria-hidden="true">
+      <div class="flow-node"><span>🩺</span>獣医師の説明</div>
+      <div class="flow-arrow"><span>AIが聞き取り<br>やさしく翻訳・要約</span></div>
+      <div class="flow-node flow-main"><svg viewBox="0 0 64 64"><use href="#paw"/></svg>MediKataru</div>
+      <div class="flow-arrow"><span>振り返る<br>共有する</span></div>
+      <div class="flow-node"><span>👨‍👩‍👧</span>飼い主・家族</div>
+    </div>
+    <div class="concept-copy reveal">
+      <p class="section-label">Concept</p>
+      <h2 class="section-title">説明を「聞いて終わり」に<br>しない。</h2>
+      <p>動物病院で医療スタッフが話した説明をAIが聞き取り、飼い主や家族にわかる<b>平易な言葉へ翻訳・要約</b>します。</p>
+      <p>飼い主があとから振り返り、許可した家族と共有できる形で残す。必要に応じて<b>受診歴のまとめ</b>へ切り替えれば、数か月・数年単位の経過もひと目で。次の診察時や、引っ越しにともなう転院時にも役立ちます。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Features ============ -->
+<section class="section features" id="features">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="section-label">Features</p>
+      <h2 class="section-title">ボタンひとつで、<br class="sp-only">ここまでまとまります。</h2>
+    </div>
+    <div class="feature-grid">
+      <article class="feature reveal">
+        <div class="feature-icon" aria-hidden="true">🎙</div>
+        <h3>録音するだけ</h3>
+        <p>診察室で丸いボタンを押すだけ。録音できない場面では、文字で入力することもできます。</p>
+      </article>
+      <article class="feature reveal">
+        <div class="feature-icon" aria-hidden="true">✨</div>
+        <h3>家族向けにやさしく要約</h3>
+        <p>「大事なこと」「おうちですること」「これからの予定」に整理。最初に一言で要点がわかります。</p>
+      </article>
+      <article class="feature reveal">
+        <div class="feature-icon" aria-hidden="true">📖</div>
+        <h3>むずかしい言葉に意味をそえて</h3>
+        <p>「クレアチニン（腎臓の働きを見る数値）」のように、専門用語にはその場で説明が入ります。</p>
+      </article>
+      <article class="feature reveal">
+        <div class="feature-icon" aria-hidden="true">⚠️</div>
+        <h3>「すぐ連絡」のサインを明示</h3>
+        <p>「こんな様子なら早めに病院へ」を目立つ枠で。いざという時に迷いません。</p>
+      </article>
+      <article class="feature reveal">
+        <div class="feature-icon" aria-hidden="true">❓</div>
+        <h3>次に聞くことリスト</h3>
+        <p>説明で抜けていた点を「次に病院で確認しましょう」として提案。聞き忘れを防ぎます。</p>
+      </article>
+      <article class="feature reveal">
+        <div class="feature-icon" aria-hidden="true">📚</div>
+        <h3>受診歴をまとめて見る</h3>
+        <p>タブを切り替えるだけで、これまでの受診を経過としてまとめて確認できます。</p>
+      </article>
+      <article class="feature reveal">
+        <div class="feature-icon" aria-hidden="true">📷</div>
+        <h3>皮膚や傷の写真を記録</h3>
+        <p>赤み・傷・できものを撮っておけば、変化をくらべたり、病院で見せたりできます。</p>
+      </article>
+      <article class="feature reveal">
+        <div class="feature-icon" aria-hidden="true">💬</div>
+        <h3>LINEで家族に送る</h3>
+        <p>まとめが入った状態でLINEやメールが開きます。送る相手は自分で選ぶから安心です。</p>
+      </article>
+      <article class="feature reveal">
+        <div class="feature-icon" aria-hidden="true">🔊</div>
+        <h3>読み上げ・大きな文字</h3>
+        <p>声での読み上げと、文字サイズ「標準・大・特大」の切り替えに対応。シニア世代にもやさしく。</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Demo ============ -->
+<section class="section demo" id="demo">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="section-label">Before / After</p>
+      <h2 class="section-title">診察室の言葉が、<br class="sp-only">こう変わります。</h2>
+      <p class="section-desc">タブを切り替えて、くらべてみてください。</p>
+    </div>
+
+    <div class="demo-box reveal">
+      <div class="demo-tabs" role="tablist" aria-label="説明の表示切り替え">
+        <button role="tab" id="tab-before" aria-selected="false" aria-controls="panel-before" tabindex="-1">🩺 診察室での説明</button>
+        <button role="tab" id="tab-after" aria-selected="true" aria-controls="panel-after">🐾 MediKataruのまとめ</button>
+        <span class="demo-indicator" aria-hidden="true"></span>
+      </div>
+
+      <div class="demo-panel" role="tabpanel" id="panel-before" aria-labelledby="tab-before" hidden>
+        <div class="vet-talk">
+          <p>「今日の血液検査では腎臓の数値、BUNとクレアチニンが少し高めでした。慢性腎臓病の初期の可能性があります。療法食に切り替えて、水をしっかり飲ませてください。2週間後に再検査しましょう。食欲がなくなったり、吐いたりしたらすぐ来てください。」</p>
+        </div>
+        <ul class="confused">
+          <li>BUNって？ クレアチニンって？</li>
+          <li>療法食はどれを、どれくらい？</li>
+          <li>家に帰って家族にどう伝えよう…</li>
+        </ul>
+      </div>
+
+      <div class="demo-panel" role="tabpanel" id="panel-after" aria-labelledby="tab-after">
+        <div class="sum-grid">
+          <div class="sum-card sum-lead">
+            <p class="sum-k">ひとことで</p>
+            <p><b>ポチは腎臓の数値が少し高めでした。食事を変えて2週間後に再検査します。</b></p>
+          </div>
+          <div class="sum-card sum-warn">
+            <p class="sum-k">⚠️ こんな様子なら、早めに病院へ連絡</p>
+            <ul><li>食欲がなくなったとき</li><li>吐いたとき</li></ul>
+          </div>
+          <div class="sum-card">
+            <p class="sum-k">📌 大事なこと</p>
+            <ul>
+              <li>BUN<span class="gloss">（血液中の老廃物の量を見る数値）</span>とクレアチニン<span class="gloss">（腎臓の働きを見る数値）</span>が少し高めでした。</li>
+              <li>慢性腎臓病<span class="gloss">（腎臓の働きがゆっくり弱っていく病気）</span>の初期の可能性があります。</li>
+            </ul>
+          </div>
+          <div class="sum-card">
+            <p class="sum-k">🏠 おうちですること</p>
+            <ul><li>ごはんを療法食<span class="gloss">（病気に合わせて栄養を調整した特別なごはん）</span>に切り替える</li><li>水をしっかり飲ませる</li></ul>
+          </div>
+          <div class="sum-card">
+            <p class="sum-k">📅 これからの予定</p>
+            <ul><li>2週間後に再検査<span class="gloss">（もう一度血液を調べること）</span></li></ul>
+          </div>
+          <div class="sum-card">
+            <p class="sum-k">❓ 次に病院で確認しましょう</p>
+            <ul><li>療法食の商品名と、1日の量・回数</li><li>水を飲ませる量の目安</li><li>再検査の予約日時</li></ul>
+          </div>
+        </div>
+      </div>
+      <p class="demo-note">※ 実際のアプリで生成したまとめをもとに、一部を抜粋・整形した例です。AIのまとめには誤りが含まれる場合があります。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Value ============ -->
+<section class="section value" id="value">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="section-label">Value</p>
+      <h2 class="section-title">診察室にいる人も、<br class="sp-only">いない人も。</h2>
+    </div>
+    <div class="value-list">
+      <article class="value-item reveal">
+        <span class="value-who">飼い主</span>
+        <div>
+          <h3>医療の説明を理解し、振り返れる</h3>
+          <p>医療スタッフの話をAIが平易な言葉に翻訳・要約。病状や治療方針を、あとから落ち着いて確認できます。</p>
+        </div>
+      </article>
+      <article class="value-item reveal">
+        <span class="value-who">家族</span>
+        <div>
+          <h3>離れていても、同じ情報を共有できる</h3>
+          <p>飼い主が選んだ相手へ説明内容を送れます。同席できない家族も、病状や今後の予定を把握しやすくなります。</p>
+        </div>
+      </article>
+      <article class="value-item reveal">
+        <span class="value-who">医療者</span>
+        <div>
+          <h3>説明を再利用し、伝え直しを減らす</h3>
+          <p>受診歴のまとめに切り替えれば、これまでの経過をひと目で。次回の診察時や、転院時の情報共有への活用を目指しています。</p>
+        </div>
+      </article>
+      <article class="value-item value-pet reveal">
+        <span class="value-who">ペット</span>
+        <div>
+          <h3>「わかったつもり」を減らし、安心・安全な医療へ</h3>
+          <p>飼い主の理解不足が、検査・処置・治療に影響する可能性を軽減します。</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ How to ============ -->
+<section class="section howto" id="howto">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="section-label">How to</p>
+      <h2 class="section-title">はじめかたは、3ステップ。</h2>
+    </div>
+    <ol class="steps">
+      <li class="step reveal">
+        <span class="step-num">1</span>
+        <div class="step-illust" aria-hidden="true">🐶</div>
+        <h3>うちの子を登録</h3>
+        <p>名前と種類だけでOK。品種や持病・アレルギーも書いておくと、受診歴のまとめに活かされます。</p>
+      </li>
+      <li class="step reveal">
+        <span class="step-num">2</span>
+        <div class="step-illust" aria-hidden="true">🎙</div>
+        <h3>診察室で録音</h3>
+        <p>獣医師・スタッフに「家族向けにまとめたい」と伝え、了承をもらってから録音をスタート。</p>
+      </li>
+      <li class="step reveal">
+        <span class="step-num">3</span>
+        <div class="step-illust" aria-hidden="true">✨</div>
+        <h3>ボタン一つでまとめ</h3>
+        <p>「わかりやすくまとめる」を押せば完成。そのまま家族へLINEで送れます。</p>
+      </li>
+    </ol>
+    <div class="pwa-tip reveal">
+      <span class="pwa-icon" aria-hidden="true">📱</span>
+      <div>
+        <h3>ホーム画面に追加すると、アプリのように使えます</h3>
+        <p>ブラウザ（Chromeなど）の右上の「︙」メニューから「ホーム画面に追加」または「アプリをインストール」を押すだけ。アイコンからすぐ開けて、電波がなくても記録や写真を見られます。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Privacy ============ -->
+<section class="section privacy" id="privacy">
+  <div class="container privacy-inner">
+    <div class="privacy-copy reveal">
+      <p class="section-label">Privacy &amp; Safety</p>
+      <h2 class="section-title">大切な記録だから、<br>安心のしくみを。</h2>
+      <p class="privacy-lead">記録と写真は、あなたの端末のブラウザの中だけに保存されます。</p>
+    </div>
+    <ul class="privacy-list">
+      <li class="reveal"><span aria-hidden="true">🔒</span><div><b>写真はサーバーに送りません</b>この端末の中だけに保存します。</div></li>
+      <li class="reveal"><span aria-hidden="true">✉️</span><div><b>AIに送るのは「まとめる」を押したときだけ</b>送られるのは説明の文字と、受診歴のまとめでは写真のメモ（文字）のみです。</div></li>
+      <li class="reveal"><span aria-hidden="true">💾</span><div><b>バックアップもかんたん</b>機種変更の前は「設定」から、写真も含めてファイルに書き出せます。</div></li>
+      <li class="reveal"><span aria-hidden="true">🤝</span><div><b>録音は了承をもらってから</b>獣医師・スタッフの了承チェックがないと記録に進めない設計です。</div></li>
+      <li class="reveal"><span aria-hidden="true">🩺</span><div><b>診断の代わりではありません</b>まとめはAIによる下書きです。お薬や治療のことは、必ず獣医師に確認してください。</div></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ Vision ============ -->
+<section class="section vision" id="vision">
+  <div class="container">
+    <div class="vision-card reveal">
+      <svg class="vision-paw" viewBox="0 0 64 64" aria-hidden="true"><use href="#paw"/></svg>
+      <div class="vision-block">
+        <p class="section-label">Mission</p>
+        <h2 class="vision-title">医療者の言葉を、<br>すべての人が理解できる言葉へ。</h2>
+        <p>医療者と飼い主・家族の間にある「言葉の壁」をなくし、誰もが自分の大切なペットの病状・治療を理解し、納得して医療に向き合えるようにする。</p>
+      </div>
+      <div class="vision-divider" aria-hidden="true"></div>
+      <div class="vision-block">
+        <p class="section-label">Vision</p>
+        <h2 class="vision-title">医療の説明が、<br>ペットと家族の<span class="nw">安心につながる社会へ。</span></h2>
+        <p>医療者から受けた説明を、飼い主がいつでも振り返り、許可した家族と共有できる。必要なときには過去の受診歴の総まとめへ切り替え、引っ越しや転院など、医療の場が変わっても説明の内容が引き継がれる未来を目指します。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="section faq" id="faq">
+  <div class="container narrow">
+    <div class="section-head reveal">
+      <p class="section-label">FAQ</p>
+      <h2 class="section-title">よくある質問</h2>
+    </div>
+    <div class="faq-list">
+      <details class="reveal">
+        <summary>アプリのインストールは必要ですか？</summary>
+        <div class="faq-a"><p>不要です。スマホのブラウザでそのまま使えます。ホーム画面に追加すれば、アプリのようにアイコンから開けます。</p></div>
+      </details>
+      <details class="reveal">
+        <summary>どんな動物に使えますか？</summary>
+        <div class="faq-a"><p>犬・猫・うさぎ・鳥・小動物など、種類を選んで登録できます。「その他」も選べます。</p></div>
+      </details>
+      <details class="reveal">
+        <summary>録音しても大丈夫ですか？</summary>
+        <div class="faq-a"><p>必ず獣医師・スタッフに「録音して、家族向けにまとめたい」と伝え、了承をもらってから録音してください。アプリ上でも了承の確認にチェックを入れないと記録に進めない設計です。</p></div>
+      </details>
+      <details class="reveal">
+        <summary>録音できないときは？</summary>
+        <div class="faq-a"><p>「録音せずに文字で入力する」を選べば、メモした内容などを文字で入れてまとめることができます。</p></div>
+      </details>
+      <details class="reveal">
+        <summary>記録はどこに保存されますか？</summary>
+        <div class="faq-a"><p>記録と写真は、お使いの端末のブラウザの中だけに保存されます。ブラウザのデータを消したり機種変更したりすると消えてしまうため、「設定」からときどきファイルに書き出してください。</p></div>
+      </details>
+      <details class="reveal">
+        <summary>家族への共有はどうやるの？</summary>
+        <div class="faq-a"><p>まとめ画面の「LINEで送る」を押すと、まとめが入った状態でLINEが開きます。送る相手はLINEの画面で選びます。録音した元の文字は送られません。文章のコピーや印刷もできます。</p></div>
+      </details>
+      <details class="reveal">
+        <summary>AIのまとめは正確ですか？</summary>
+        <div class="faq-a"><p>AIによる下書きのため、まちがいが入ることがあります。診断や治療の判断には使わず、お薬や治療のことは必ず獣医師に確認してください。</p></div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Final CTA ============ -->
+<section class="final-cta">
+  <div class="container final-inner reveal">
+    <svg class="final-paw" viewBox="0 0 64 64" aria-hidden="true"><use href="#paw"/></svg>
+    <h2>次の診察から、<br class="sp-only">「わかった」を残そう。</h2>
+    <p>うちの子の登録は、名前と種類だけ。1分ではじめられます。</p>
+    <a href="https://medikataru-for-pet.onrender.com/" class="btn btn-light btn-lg" target="_blank" rel="noopener">
+      <span class="btn-plus" aria-hidden="true">＋</span>
+      <span>うちの子を登録する<small>犬・猫・うさぎ・鳥など</small></span>
+    </a>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ Footer ============ -->
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <span class="brand-icon" aria-hidden="true"><svg viewBox="0 0 64 64"><use href="#paw"/></svg></span>
+      <div>
+        <p class="brand-name">Medi<em>Kataru</em> <small>for pet</small></p>
+        <p class="footer-tag">動物病院の説明を、家族の言葉に。</p>
+      </div>
+    </div>
+    <div class="footer-sources">
+      <p class="footer-h">参考文献</p>
+      <ol>
+        <li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC539473/" target="_blank" rel="noopener">Kessels RPC. Patients' memory for medical information. J R Soc Med. 2003 May;96(5):219–222.</a></li>
+        <li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11383561/" target="_blank" rel="noopener">Health Lit Res Pract. 2024 Sep 9;8(3):e175–e183.</a></li>
+        <li><a href="https://www.mhlw.go.jp/stf/newpage_21481.html" target="_blank" rel="noopener">厚生労働省「我が国の人口について」</a></li>
+      </ol>
+    </div>
+  </div>
+  <div class="container">
+    <p class="disclaimer">MediKataru for pet のまとめはAIによる下書きです。診断や治療の判断には使わず、必ず獣医師に確認してください。</p>
+    <p class="copyright">© MediKataru for pet</p>
+  </div>
+</footer>
+
+<a href="#top" class="to-top" id="to-top" aria-label="ページの先頭へ">↑</a>
+
+<!-- SVG sprite -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="paw" viewBox="0 0 64 64">
+    <ellipse cx="17" cy="27" rx="6" ry="7.5"/>
+    <ellipse cx="27" cy="16" rx="6" ry="7.5"/>
+    <ellipse cx="38" cy="16" rx="6" ry="7.5"/>
+    <ellipse cx="48" cy="27" rx="6" ry="7.5"/>
+    <path fill-rule="evenodd" d="M32.5 30C23 30 16 38.5 16 45.5c0 5 3.6 7.5 8.3 7.5 3.6 0 5.8-1.8 8.2-1.8s4.6 1.8 8.2 1.8c4.7 0 8.3-2.5 8.3-7.5C49 38.5 42 30 32.5 30zm0 17.5-6-5.6a3.6 3.6 0 0 1 5.1-5.1l.9.9.9-.9a3.6 3.6 0 0 1 5.1 5.1z"/>
+  </symbol>
+</svg>
+
+<script src="js/main.js"></script>
+</body>
+</html>
