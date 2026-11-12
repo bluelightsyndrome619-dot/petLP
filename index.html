@@ -73,6 +73,10 @@
         </a>
         <a href="#demo" class="btn btn-ghost btn-lg">まとめの例を見る</a>
       </div>
+      <div class="hero-qr reveal">
+        <img src="assets/qr-app.svg" width="88" height="88" alt="MediKataru for pet アプリを開くQRコード">
+        <p><b>スマホのカメラで読み取ると、すぐに開けます</b>PCでご覧の方はこちらからどうぞ</p>
+      </div>
       <ul class="hero-badges reveal">
         <li><span aria-hidden="true">🐶</span>犬・猫・うさぎ・鳥など</li>
         <li><span aria-hidden="true">🔒</span>記録と写真は端末内に保存</li>
@@ -467,14 +471,29 @@
 
 <!-- ============ Final CTA ============ -->
 <section class="final-cta">
-  <div class="container final-inner reveal">
+  <div class="container final-inner reveal" id="start">
     <svg class="final-paw" viewBox="0 0 64 64" aria-hidden="true"><use href="#paw"/></svg>
     <h2>次の診察から、<br class="sp-only">「わかった」を残そう。</h2>
     <p>うちの子の登録は、名前と種類だけ。1分ではじめられます。</p>
-    <a href="https://medikataru-for-pet.onrender.com/" class="btn btn-light btn-lg" target="_blank" rel="noopener">
-      <span class="btn-plus" aria-hidden="true">＋</span>
-      <span>うちの子を登録する<small>犬・猫・うさぎ・鳥など</small></span>
-    </a>
+    <div class="access">
+      <div class="access-main">
+        <a href="https://medikataru-for-pet.onrender.com/" class="btn btn-light btn-lg" target="_blank" rel="noopener">
+          <span class="btn-plus" aria-hidden="true">＋</span>
+          <span>うちの子を登録する<small>犬・猫・うさぎ・鳥など</small></span>
+        </a>
+        <ul class="access-points">
+          <li>✓ アプリのダウンロードは不要</li>
+          <li>✓ スマホ・タブレット・PCのブラウザで使えます</li>
+          <li>✓ ホーム画面に追加すれば、次からワンタップ</li>
+        </ul>
+        <p class="access-note">※ しばらく使われていないと、最初の表示に数十秒かかることがあります。</p>
+      </div>
+      <div class="qr-card">
+        <img src="assets/qr-app.svg" width="160" height="160" alt="MediKataru for pet アプリを開くQRコード">
+        <p class="qr-cap"><b>QRコードで開く</b>スマホのカメラで読み取るだけ。<br>隣にいる家族にも読み取ってもらえます。</p>
+        <a href="assets/qr-app.svg" download="medikataru-for-pet-qr.svg" class="qr-dl">⬇ QRコードを保存</a>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -506,6 +525,14 @@
 </footer>
 
 <a href="#top" class="to-top" id="to-top" aria-label="ページの先頭へ">↑</a>
+
+<!-- Mobile sticky CTA -->
+<div class="sp-cta" id="sp-cta">
+  <a href="https://medikataru-for-pet.onrender.com/" class="btn btn-primary" target="_blank" rel="noopener">
+    <svg viewBox="0 0 64 64" aria-hidden="true"><use href="#paw"/></svg>
+    アプリを開いてはじめる
+  </a>
+</div>
 
 <!-- SVG sprite -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">

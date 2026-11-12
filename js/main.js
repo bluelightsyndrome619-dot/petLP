@@ -7,10 +7,20 @@
   /* ---------- Header shadow & to-top ---------- */
   const header = document.querySelector('.site-header');
   const toTop = document.getElementById('to-top');
+  const spCta = document.getElementById('sp-cta');
+  const hero = document.querySelector('.hero');
+  const finalCta = document.querySelector('.final-cta');
   const onScroll = () => {
     const y = window.scrollY;
     header.classList.toggle('is-scrolled', y > 8);
     toTop.classList.toggle('is-show', y > 600);
+    // mobile sticky CTA: after the hero, hidden while the final CTA is on screen
+    const pastHero = hero.getBoundingClientRect().bottom < 80;
+    const f = finalCta.getBoundingClientRect();
+    const finalVisible = f.top < window.innerHeight && f.bottom > 0;
+    const showSp = pastHero && !finalVisible;
+    spCta.classList.toggle('is-show', showSp);
+    toTop.classList.toggle('lift', showSp);
   };
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
@@ -102,6 +112,14 @@
     });
     select(tabs.find((t) => t.getAttribute('aria-selected') === 'true') || tabs[0]);
   }
+
+  /* ---------- Warm up the app ----------
+     The app runs on Render's free tier and sleeps when idle.
+     A lightweight no-cors request on page load starts waking it up,
+     so it is more likely to be ready when the visitor taps a CTA. */
+  const APP_URL = 'https://medikataru-for-pet.onrender.com/';
+  const warmUp = () => { try { fetch(APP_URL, { mode: 'no-cors', cache: 'no-store' }).catch(() => {}); } catch (_) { /* ignore */ } };
+  if ('requestIdleCallback' in window) requestIdleCallback(warmUp, { timeout: 3000 }); else setTimeout(warmUp, 1500);
 
   /* ---------- FAQ: one open at a time ---------- */
   const faqs = document.querySelectorAll('.faq details');
