@@ -113,6 +113,76 @@
     select(tabs.find((t) => t.getAttribute('aria-selected') === 'true') || tabs[0]);
   }
 
+  /* ---------- Daily log: weight chart (sample data) ---------- */
+  const chartEl = document.getElementById('weight-chart');
+  if (chartEl) {
+    const data = [
+      ['10/30', 8.5], ['11/01', 8.5], ['11/03', 8.4], ['11/05', 8.4], ['11/06', 8.3],
+      ['11/08', 8.3], ['11/10', 8.3], ['11/11', 8.2], ['11/12', 8.2], ['11/13', 8.2],
+    ];
+    const W = 520, H = 220, P = { l: 44, r: 16, t: 16, b: 30 };
+    const min = 8.0, max = 8.7;
+    const x = (i) => P.l + (i * (W - P.l - P.r)) / (data.length - 1);
+    const y = (v) => P.t + ((max - v) * (H - P.t - P.b)) / (max - min);
+    const ns = 'http://www.w3.org/2000/svg';
+    const svg = document.createElementNS(ns, 'svg');
+    svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
+    let inner = '<defs><linearGradient id="wgrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e07a4f" stop-opacity=".28"/><stop offset="1" stop-color="#e07a4f" stop-opacity="0"/></linearGradient></defs>';
+    [8.0, 8.2, 8.4, 8.6].forEach((v) => {
+      inner += `<line class="grid-line" x1="${P.l}" x2="${W - P.r}" y1="${y(v)}" y2="${y(v)}"/><text class="axis" x="${P.l - 8}" y="${y(v) + 4}" text-anchor="end">${v.toFixed(1)}</text>`;
+    });
+    data.forEach(([d], i) => { if (i % 3 === 0 || i === data.length - 1) inner += `<text class="axis" x="${x(i)}" y="${H - 8}" text-anchor="middle">${d}</text>`; });
+    const pts = data.map(([, v], i) => `${x(i)},${y(v)}`).join(' ');
+    inner += `<polygon class="area" points="${P.l},${H - P.b} ${pts} ${W - P.r},${H - P.b}"/>`;
+    inner += `<polyline class="line" points="${pts}"/>`;
+    data.forEach(([d, v], i) => {
+      inner += `<circle class="hit" cx="${x(i)}" cy="${y(v)}" r="16" data-i="${i}"/><circle class="pt" cx="${x(i)}" cy="${y(v)}" r="5" data-i="${i}" tabindex="0" role="button" aria-label="${d} ${v.toFixed(1)}kg"/>`;
+    });
+    svg.innerHTML = inner;
+    chartEl.appendChild(svg);
+
+    const tip = document.getElementById('weight-tip');
+    const ptEls = [...svg.querySelectorAll('.pt')];
+    const show = (i) => {
+      ptEls.forEach((el, j) => el.classList.toggle('on', j === i));
+      const [d, v] = data[i];
+      const prev = i > 0 ? v - data[i - 1][1] : 0;
+      const diff = i > 0 ? `（前回から ${prev === 0 ? '±0.0' : (prev > 0 ? '+' : '−') + Math.abs(prev).toFixed(1)}kg）` : '';
+      tip.innerHTML = `${d} の体重　<b>${v.toFixed(1)}kg</b> ${diff}`;
+    };
+    svg.addEventListener('click', (e) => { const i = e.target.dataset && e.target.dataset.i; if (i !== undefined) show(Number(i)); });
+    ptEls.forEach((el, i) => el.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); show(i); } }));
+
+    const table = document.getElementById('weight-table');
+    table.querySelector('tbody').innerHTML = data.slice().reverse().map(([d, v]) => `<tr><td>${d}</td><td>${v.toFixed(1)} kg</td></tr>`).join('');
+    const tg = document.getElementById('weight-toggle');
+    tg.addEventListener('click', () => {
+      const on = tg.getAttribute('aria-pressed') !== 'true';
+      tg.setAttribute('aria-pressed', String(on));
+      tg.textContent = on ? 'グラフで見る' : '数値で見る';
+      table.hidden = !on; chartEl.hidden = on; tip.hidden = on;
+    });
+  }
+
+  /* ---------- Daily log: period switch (sample values) ---------- */
+  const periodBtns = document.querySelectorAll('.period [role="radio"]');
+  const calcGrid = document.getElementById('calc-grid');
+  if (periodBtns.length && calcGrid) {
+    const sets = {
+      last: { days: '12<small>日</small>', weight: '−0.3<small>kg</small>', water: '340<small>ml/日</small>', poop: 'ふつう 9日・やわらかめ 2日・下痢 1日', walk: '52<small>分/日</small>' },
+      7: { days: '6<small>日</small>', weight: '−0.1<small>kg</small>', water: '330<small>ml/日</small>', poop: 'ふつう 4日・やわらかめ 1日・下痢 1日', walk: '50<small>分/日</small>' },
+      14: { days: '12<small>日</small>', weight: '−0.3<small>kg</small>', water: '340<small>ml/日</small>', poop: 'ふつう 9日・やわらかめ 2日・下痢 1日', walk: '52<small>分/日</small>' },
+      30: { days: '25<small>日</small>', weight: '−0.4<small>kg</small>', water: '345<small>ml/日</small>', poop: 'ふつう 20日・やわらかめ 4日・下痢 1日', walk: '55<small>分/日</small>' },
+    };
+    const dds = calcGrid.querySelectorAll('dd');
+    periodBtns.forEach((btn) => btn.addEventListener('click', () => {
+      periodBtns.forEach((b) => b.setAttribute('aria-checked', String(b === btn)));
+      const set = sets[btn.dataset.period];
+      dds.forEach((dd) => dd.classList.add('fade'));
+      setTimeout(() => dds.forEach((dd) => { dd.innerHTML = set[dd.dataset.k]; dd.classList.remove('fade'); }), reduceMotion ? 0 : 200);
+    }));
+  }
+
   /* ---------- Warm up the app ----------
      The app runs on Render's free tier and sleeps when idle.
      A lightweight no-cors request on page load starts waking it up,
