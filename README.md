@@ -9,3 +9,7 @@
 ビルド不要。`index.html` をブラウザで開くか、GitHub Pages 等の静的ホスティングにそのまま配置できます。
 
 アプリ本体: https://medikataru-for-pet.onrender.com/
+
+## 更新時の注意（キャッシュ対策）
+CSS / JS を変更したら、`index.html` 内の `?v=YYYYMMDD` を新しい日付に書き換えてください。
+古いCSSが残ったまま新しいHTMLが表示されて、レイアウトが崩れるのを防ぎます。
